@@ -7,6 +7,7 @@ import {
 	getUser,
 	forgotPassword,
 	resetPassword,
+	homeUrl,
 } from "../controllers";
 import {
 	createNote,
@@ -22,6 +23,7 @@ import isUserAuthenticated from "../middleware/auth";
 const router = express.Router();
 
 // user
+router.route("/").get(homeUrl);
 router.route("/signup").post(userSignup);
 router.route("/login").post(userLogin);
 router.route("/logout").get(isUserAuthenticated, userLogout);

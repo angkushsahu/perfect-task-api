@@ -6,6 +6,10 @@ import ErrorHandler from "../utils/ErrorHandler";
 import sendToken from "../utils/jwtToken";
 import sendEmail from "../utils/sendEmail";
 
+export const homeUrl = catchAsyncErrors(async (req: Request, res: Response, next: NextFunction) => {
+	res.status(200).send("API for Perfect-Task 😄");
+});
+
 // user signup
 export const userSignup = catchAsyncErrors(
 	async (req: Request, res: Response, next: NextFunction) => {
